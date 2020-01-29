@@ -1,4 +1,4 @@
-package ua.lv.lgs.delegation;
+package ua.lviv.logos.core.delegation;
 
 public class DelegationApp {
 

@@ -1,4 +1,4 @@
-package ua.lv.lgs.interf;
+package ua.lviv.logos.core.interf;
 
 public class Duck implements Eatable, Walkable, Swimmable, CanSwim {
 

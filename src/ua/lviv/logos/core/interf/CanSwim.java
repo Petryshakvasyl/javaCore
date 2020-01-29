@@ -1,4 +1,4 @@
-package ua.lv.lgs.interf;
+package ua.lviv.logos.core.interf;
 
 public interface CanSwim {
     default void swim() {
