@@ -107,6 +107,7 @@ public class App {
 
             System.out.println(list);
             list.add("A");
+
             list.add("A");
             System.out.println(list);
             Collection<String> collection = Collections.singletonList("A");
