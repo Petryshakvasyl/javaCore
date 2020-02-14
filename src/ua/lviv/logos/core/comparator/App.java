@@ -49,28 +49,28 @@ public class App {
                         new User("Andriy", "Dolgov", 15),
                         new User("Vasyl", "Petryshak", 25)
         ));
-        users.forEach(user -> System.out.println(user.getFirstName() + " " + user.getLastName()));
-        Collections.sort(users);
-        System.out.println("after sort: ");
-        users.forEach(user -> System.out.println(user.getFirstName() + " " + user.getLastName()));
-
-        System.out.println("sort by age: ....");
-
-        users.forEach(user -> System.out.print(user.getLastName() + " " + user.getAge() + "-"));
-        Collections.sort(users, new AgeComparator());
-        System.out.println();
-        users.forEach(user -> System.out.print(user.getLastName() + " " + user.getAge() + "-"));
-
-        ListIterator<User> listIterator = users.listIterator(3);
-//        System.out.println("List iterator ... ");
-//        while (listIterator.hasNext()) {
-//            System.out.println(listIterator.next());
+//        users.forEach(user -> System.out.println(user.getFirstName() + " " + user.getLastName()));
+//        Collections.sort(users);
+//        System.out.println("after sort: ");
+//        users.forEach(user -> System.out.println(user.getFirstName() + " " + user.getLastName()));
+//
+//        System.out.println("sort by age: ....");
+//
+//        users.forEach(user -> System.out.print(user.getLastName() + " " + user.getAge() + "-"));
+//        Collections.sort(users, new AgeComparator());
+//        System.out.println();
+//        users.forEach(user -> System.out.print(user.getLastName() + " " + user.getAge() + "-"));
+//
+//        ListIterator<User> listIterator = users.listIterator(3);
+////        System.out.println("List iterator ... ");
+////        while (listIterator.hasNext()) {
+////            System.out.println(listIterator.next());
+////        }
+//
+//        System.out.println();
+//        System.out.println("List iterator ...  previous");
+//        while (listIterator.hasPrevious()) {
+//            System.out.println(listIterator.previous());
 //        }
-
-        System.out.println();
-        System.out.println("List iterator ...  previous");
-        while (listIterator.hasPrevious()) {
-            System.out.println(listIterator.previous());
-        }
     }
 }
