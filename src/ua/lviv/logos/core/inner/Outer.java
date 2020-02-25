@@ -2,12 +2,31 @@ package ua.lviv.logos.core.inner;
 
 public class Outer {
 
+
     private String outerString = "Default";
     private static int count = 0;
 
     public Outer() {
        count++;
     }
+
+    interface Doable{
+        void doSomth();
+        default void defValue(){
+            System.out.println(count);
+        }
+    }
+
+    class DoableImpl implements Doable{
+
+        @Override
+        public void doSomth() {
+            System.out.println(outerString);
+            System.out.println(count);
+        }
+
+    }
+
     static class Nested{
         private int nInt;
 

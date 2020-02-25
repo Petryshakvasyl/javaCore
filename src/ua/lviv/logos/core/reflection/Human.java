@@ -8,4 +8,13 @@ public class Human {
 //        System.out.println("value after init: " + value);
 //        System.out.println("This is a static block in Human class");
 //    }
+
+    public void walk(){
+        System.out.println("I can walk");
+    }
+
+    @Override
+    public String toString() {
+        return "Human{}";
+    }
 }

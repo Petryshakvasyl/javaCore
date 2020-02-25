@@ -1,13 +1,19 @@
 package ua.lviv.logos.core;
 
+import ua.lviv.logos.core.reflection.Human;
+
 import java.util.Objects;
 
-public class User implements Comparable<User>{
+public class User extends Human implements Comparable<User>{
     private String firstName;
     private String lastName;
     private int age;
 
     public User() {
+    }
+
+    public User(int age) {
+        this.age = age;
     }
 
     public User(String firstName, String lastName, int age) {
