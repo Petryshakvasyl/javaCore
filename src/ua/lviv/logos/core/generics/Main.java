@@ -55,15 +55,22 @@ public class Main {
 
         // Upper Bounded Wildcards : ? extends
         List<Human> humans = Util.getHumanList();
-        //List<Human> humansUser = getUserLisst(); //compile error: invariant only List<Human> can be
-        //List<Human> humanStudents = getStudentList(); //compile error: invariant only List<Human> can be
+//        List<Human> humansUser = Util.getUserLisst(); //compile error: invariant only List<Human> can be
+//        List<Human> humanStudents = Util.getStudentList(); //compile error: invariant only List<Human> can be
         List<? extends Human> humanProduser = Util.getHumanList();
         List<? extends Human> humansUser = Util.getUserLisst();
-        List<? extends Human> humanStudents = Util.getHumanList();
-        humanProduser.add(null); // we can add only null for the ? extends wildcard
-//        humans1.add(new User(24));  //compile error: we can not add an object to ? extends wildcard
-//        humans1.add(new Human()); //compile error: we can not add an object to ? extends wildcard
-//        humans1.add(new Student(1)); //compile error: we can not add an object to ? extends wildcard
+        List<? extends Human> humanStudents = Util.getStudentList();
+        humanProduser.add(null);
+//        humanProduser.get(humanProduser.size()-1) = new User();
+        List<User> users = Util.getUserLisst();
+        users.set(0, null);
+        User u = users.get(0);
+        u = new User();
+
+        // we can add only null for the ? extends wildcard
+//        humanproduser.add(new user(24));  //compile error: we can not add an object to ? extends wildcard
+//        humanproduser.add(new human()); //compile error: we can not add an object to ? extends wildcard
+//        humanproduser.add(new student(1)); //compile error: we can not add an object to ? extends wildcard
 
         for (Human human : humanProduser) {
             System.out.println(human);
@@ -73,9 +80,11 @@ public class Main {
         System.out.println("=============Lower Bounded Wildcards=====================");
         List<? super User> studentConsumer1 = Util.getHumanList();
         List<? super User> studentConsumer2 = Util.getUserLisst();
-        //List<? super User> studentConsumer = Util.getStudentList(); //compile error: it should be at least List of User or super of User
+//        List<? super User> studentConsumer = Util.getStudentList(); //compile error: it should be at least List of User or super of User
         studentConsumer1.add(new User());
+        studentConsumer1.add(null);
         studentConsumer1.add(new Student(1));
+
 //        studentConsumer1.add(new Human()); // compile error
 
         // compile error: we can NOT get from Lower Bounded Wildcards
@@ -85,7 +94,7 @@ public class Main {
 
         //we can get from Lower Bounded Wildcards only Object
         for (Object o : studentConsumer1) {
-            System.out.println(o);
+            System.out.println((User)o);
         }
 
     }
