@@ -12,7 +12,7 @@ public class PrintThread extends Thread {
     public void run() {
         for (int i = 0; i <count; i++) {
             try {
-                Thread.currentThread().sleep(1000);
+                Thread.sleep(200);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
